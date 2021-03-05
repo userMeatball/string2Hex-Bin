@@ -38,21 +38,27 @@ def str2H(strU):
     return strHex
 
 
-userString = input("Enter a string: ")
-
 test = True
 while test == True:
-    userChoice = input("Convert to (B)inary / (H)exadecimal / (A)LL ")
+    userString = input("Enter a string: ")
+    
+    userChoice = input("Convert to (B)inary / (H)exadecimal / (A)LL ?: ")
     
     if userChoice == 'B' or userChoice == 'b':
         str2B(userString)
-        test = False
     elif userChoice == 'H' or userChoice == 'h':
         str2H(userString)
-        test = False
     elif userChoice == 'A' or userChoice == 'a':
         str2B(userString)
         str2H(userString)
-        test = False
     else:
         print("invalid choice, try again\n")
+
+    userChoice = input("Would you like to enter another string or quit? (Y/Q) ?: ")
+
+    if userChoice == 'Y' or userChoice == 'y':
+        continue
+    elif userChoice == 'Q' or userChoice == 'q':
+        test = False
+    else:
+        print("Invalid choice, try again")
